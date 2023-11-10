@@ -25,7 +25,7 @@ class ModQlpreviewHelper
     const INPUT_ID_KEY = 'id';
 
     private stdClass $module;
-    private JRegistry $params;
+    private $params;
     private Input $input;
     private DatabaseDriver $db;
     private string $base_url;
@@ -35,7 +35,7 @@ class ModQlpreviewHelper
     private string $index_url;
     private string $sef_url;
 
-    function __construct(stdClass $module, JRegistry $params, Input $input, DatabaseDriver $db, string $base_url, string $protocol)
+    function __construct(stdClass $module, $params, Input $input, DatabaseDriver $db, string $base_url, string $protocol)
     {
         $this->module = $module;
         $this->params = $params;
