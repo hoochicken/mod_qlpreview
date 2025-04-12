@@ -1,8 +1,8 @@
 <?php
 /**
  * @package        mod_qlqlpreview
- * @copyright    Copyright (C) 2023 ql.de All rights reserved.
- * @author        Mareike Riegel mareike.riegel@ql.de
+ * @copyright      Copyright (C) 2025 ql.de All rights reserved.
+ * @author         Mareike Riegel mareike.riegel@ql.de
  * @license        GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -11,6 +11,7 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
 use Joomla\Database\DatabaseDriver;
 use Joomla\Input\Input;
+use Joomla\Registry\Registry as Registry;
 
 defined('_JEXEC') or die;
 
@@ -25,7 +26,7 @@ class ModQlpreviewHelper
     const INPUT_ID_KEY = 'id';
 
     private stdClass $module;
-    private $params;
+    private Registry $params;
     private Input $input;
     private DatabaseDriver $db;
     private string $base_url;
@@ -35,7 +36,7 @@ class ModQlpreviewHelper
     private string $index_url;
     private string $sef_url;
 
-    function __construct(stdClass $module, $params, Input $input, DatabaseDriver $db, string $base_url, string $protocol)
+    function __construct(stdClass $module, Registry $params, Input $input, DatabaseDriver $db, string $base_url, string $protocol)
     {
         $this->module = $module;
         $this->params = $params;
